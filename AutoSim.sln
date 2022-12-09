@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSim", "AutoSim\AutoSim.csproj", "{C78A701F-6570-493C-9D2E-75306433E418}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoSim", "AutoSim\AutoSim.csproj", "{C78A701F-6570-493C-9D2E-75306433E418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLibrary", "AutoLibrary\AutoLibrary.csproj", "{5989ACAB-884A-4F94-9ED2-A12E5A728816}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C78A701F-6570-493C-9D2E-75306433E418}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C78A701F-6570-493C-9D2E-75306433E418}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C78A701F-6570-493C-9D2E-75306433E418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5989ACAB-884A-4F94-9ED2-A12E5A728816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5989ACAB-884A-4F94-9ED2-A12E5A728816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5989ACAB-884A-4F94-9ED2-A12E5A728816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5989ACAB-884A-4F94-9ED2-A12E5A728816}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

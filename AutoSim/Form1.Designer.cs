@@ -33,13 +33,12 @@
             this.choicebox = new System.Windows.Forms.ComboBox();
             this.hplabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.enginecheck = new System.Windows.Forms.CheckBox();
+            this.EngineCheck = new System.Windows.Forms.CheckBox();
             this.key = new System.Windows.Forms.PictureBox();
             this.horn = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.speedlabel = new System.Windows.Forms.Label();
+            this.GearLabel = new System.Windows.Forms.Label();
+            this.SpeedLabel = new System.Windows.Forms.Label();
             this.breakbutton = new System.Windows.Forms.Button();
             this.acceleratorbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -65,6 +64,7 @@
             this.choicebox.Name = "choicebox";
             this.choicebox.Size = new System.Drawing.Size(196, 23);
             this.choicebox.TabIndex = 1;
+            this.choicebox.SelectedIndexChanged += new System.EventHandler(this.choicebox_SelectedIndexChanged);
             // 
             // hplabel
             // 
@@ -77,8 +77,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.enginecheck);
+            this.groupBox1.Controls.Add(this.EngineCheck);
             this.groupBox1.Controls.Add(this.key);
             this.groupBox1.Controls.Add(this.horn);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -90,26 +89,20 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // EngineCheck
             // 
-            this.textBox1.Location = new System.Drawing.Point(29, 175);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 6;
-            // 
-            // enginecheck
-            // 
-            this.enginecheck.AutoSize = true;
-            this.enginecheck.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.enginecheck.Location = new System.Drawing.Point(77, 41);
-            this.enginecheck.Name = "enginecheck";
-            this.enginecheck.Size = new System.Drawing.Size(15, 14);
-            this.enginecheck.TabIndex = 5;
-            this.enginecheck.UseVisualStyleBackColor = true;
+            this.EngineCheck.AutoCheck = false;
+            this.EngineCheck.AutoSize = true;
+            this.EngineCheck.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.EngineCheck.Location = new System.Drawing.Point(77, 41);
+            this.EngineCheck.Name = "EngineCheck";
+            this.EngineCheck.Size = new System.Drawing.Size(15, 14);
+            this.EngineCheck.TabIndex = 5;
+            this.EngineCheck.UseVisualStyleBackColor = true;
             // 
             // key
             // 
-            this.key.Image = ((System.Drawing.Image)(resources.GetObject("key.Image")));
+            this.key.Image = global::AutoSim.Properties.Resources.key;
             this.key.Location = new System.Drawing.Point(16, 12);
             this.key.Name = "key";
             this.key.Size = new System.Drawing.Size(55, 65);
@@ -120,7 +113,7 @@
             // 
             // horn
             // 
-            this.horn.Image = global::AutoSim.Properties.Resources.horn;
+            this.horn.Image = ((System.Drawing.Image)(resources.GetObject("horn.Image")));
             this.horn.Location = new System.Drawing.Point(16, 83);
             this.horn.Name = "horn";
             this.horn.Size = new System.Drawing.Size(63, 39);
@@ -131,37 +124,37 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.speedlabel);
+            this.groupBox2.Controls.Add(this.GearLabel);
+            this.groupBox2.Controls.Add(this.SpeedLabel);
             this.groupBox2.Location = new System.Drawing.Point(99, 22);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(269, 100);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
-            // label1
+            // GearLabel
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(177, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 65);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.GearLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.GearLabel.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.GearLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.GearLabel.Location = new System.Drawing.Point(177, 19);
+            this.GearLabel.Name = "GearLabel";
+            this.GearLabel.Size = new System.Drawing.Size(73, 65);
+            this.GearLabel.TabIndex = 1;
+            this.GearLabel.Text = "0";
+            this.GearLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // speedlabel
+            // SpeedLabel
             // 
-            this.speedlabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.speedlabel.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.speedlabel.ForeColor = System.Drawing.Color.ForestGreen;
-            this.speedlabel.Location = new System.Drawing.Point(16, 19);
-            this.speedlabel.Name = "speedlabel";
-            this.speedlabel.Size = new System.Drawing.Size(155, 65);
-            this.speedlabel.TabIndex = 0;
-            this.speedlabel.Text = "0";
-            this.speedlabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.SpeedLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SpeedLabel.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SpeedLabel.ForeColor = System.Drawing.Color.ForestGreen;
+            this.SpeedLabel.Location = new System.Drawing.Point(16, 19);
+            this.SpeedLabel.Name = "SpeedLabel";
+            this.SpeedLabel.Size = new System.Drawing.Size(155, 65);
+            this.SpeedLabel.TabIndex = 0;
+            this.SpeedLabel.Text = "0";
+            this.SpeedLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // breakbutton
             // 
@@ -171,6 +164,7 @@
             this.breakbutton.TabIndex = 1;
             this.breakbutton.Text = "Bremse";
             this.breakbutton.UseVisualStyleBackColor = true;
+            this.breakbutton.MouseHover += new System.EventHandler(this.breakbutton_MouseHover);
             // 
             // acceleratorbutton
             // 
@@ -180,6 +174,7 @@
             this.acceleratorbutton.TabIndex = 0;
             this.acceleratorbutton.Text = "Gas";
             this.acceleratorbutton.UseVisualStyleBackColor = true;
+            this.acceleratorbutton.MouseHover += new System.EventHandler(this.acceleratorbutton_MouseHover);
             // 
             // Form1
             // 
@@ -206,17 +201,16 @@
         #endregion
 
         private Label choicelabel;
-        private ComboBox choicebox;
         private Label hplabel;
         private GroupBox groupBox1;
         private Button acceleratorbutton;
         private Button breakbutton;
         private GroupBox groupBox2;
-        private Label speedlabel;
+        private Label SpeedLabel;
         private PictureBox horn;
-        private Label label1;
+        private Label GearLabel;
         private PictureBox key;
-        private CheckBox enginecheck;
-        private TextBox textBox1;
+        public ComboBox choicebox;
+        public CheckBox EngineCheck;
     }
 }
