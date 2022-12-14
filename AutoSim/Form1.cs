@@ -3,17 +3,16 @@ namespace AutoSim
     public partial class Form1 : Form
     {
         private Auto auto;
-
+        Auto Porsche = new("Porsche", 250);
+        Auto Opel = new("Opel", 90);
+        Auto Ferrari = new("Ferrari", 370);
         public Form1()
         {
             InitializeComponent();
 
-            choicebox.Items.Add(new Auto("Porsche", 250));
-            choicebox.Items.Add(new Auto("Opel", 90));
-            choicebox.Items.Add(new Auto("Ferrari", 370));
-
-           
-
+            choicebox.Items.Add(Porsche);
+            choicebox.Items.Add(Opel);
+            choicebox.Items.Add(Ferrari);
         }
 
         private void key_Click(object sender, EventArgs e)
@@ -48,10 +47,10 @@ namespace AutoSim
             {
                 hplabel.Text = "0 PS";
             }
-            if (auto.IsEngineOn)
-            {
-                auto.TurnOffEngine();
-            }
+            SpeedLabel.Text = Convert.ToString(auto.CurrentSpeed);
+            GearLabel.Text = Convert.ToString(auto.CurrentGear);
+            EngineCheck.Checked = auto.IsEngineOn;
+
         }
         
         private void acceleratorbutton_MouseHover(object sender, EventArgs e)
