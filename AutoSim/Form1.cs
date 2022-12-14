@@ -29,6 +29,8 @@ namespace AutoSim
             else
             {
                 auto.StartEngine();
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Admin\OneDrive - sluz\BLJ\OOP_C#\AutoSim\car-ignition.wav");
+                player.Play();
             }
             EngineCheck.Checked = auto.IsEngineOn;
 
@@ -93,5 +95,14 @@ namespace AutoSim
 
         private bool MouseIsOverControl(Button btn) =>
             btn.ClientRectangle.Contains(btn.PointToClient(Cursor.Position));
+
+        private void horn_Click(object sender, EventArgs e)
+        {
+            if (auto.IsEngineOn)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Admin\OneDrive - sluz\BLJ\OOP_C#\AutoSim\doomfist_and_they_say.wav");
+                player.Play();
+            }
+        }
     }
 }

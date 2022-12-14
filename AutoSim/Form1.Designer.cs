@@ -120,6 +120,7 @@
             this.horn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.horn.TabIndex = 3;
             this.horn.TabStop = false;
+            this.horn.Click += new System.EventHandler(this.horn_Click);
             // 
             // groupBox2
             // 
