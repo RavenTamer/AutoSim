@@ -81,7 +81,11 @@ namespace AutoSim
         }
         public void CalculateCurrentGear()
         {
-            if(currentspeed <= 10)
+            if (currentspeed < 1)
+            {
+                currentgear = 0;
+            }
+            if(currentspeed <= 10 && currentspeed>0)
             {
                 currentgear = 1;
             }

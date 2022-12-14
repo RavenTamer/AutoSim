@@ -76,7 +76,9 @@ namespace AutoSim
                 while (MouseIsOverControl(breakbutton) && auto.CurrentSpeed >= 0)
                 {
                     auto.Break();
+                    auto.CalculateCurrentGear();
                     SpeedLabel.Text = Convert.ToString(auto.CurrentSpeed);
+                    GearLabel.Text = Convert.ToString(auto.CurrentGear);
                     Thread.Sleep(300);
                     Application.DoEvents();
                 }
